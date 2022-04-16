@@ -1,15 +1,15 @@
 import axios from "axios"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
-import { CountryAction } from "../Redux/Action"
+import { CityAction, CountryAction } from "../Redux/Action"
 
 export const CountryForm = () => {
     const [data,setData] = useState("")
     const dispatch = useDispatch()
     const PostData = ()=>{
-        axios.post('http://localhost:8080/country',{country:data}).then(({data})=>{
+        axios.post(' https://jsons-ervermock.herokuapp.com/country',{country:data}).then(({data})=>{
         })
-        axios.post('http://localhost:8080/country').then(({data})=>{
+        axios.post(' https://jsons-ervermock.herokuapp.com/country').then(({data})=>{
             dispatch(CityAction(data))
         })
     }

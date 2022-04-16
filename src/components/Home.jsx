@@ -19,12 +19,12 @@ export const Home = () => {
         GetData()
     }, [pop])
     const GetData = () => {
-        axios.get(`http://localhost:8080/city?_sort=populaton&_order=${pop}`).then(({ data }) => {
+        axios.get(` https://jsons-ervermock.herokuapp.com/city?_sort=populaton&_order=${pop}`).then(({ data }) => {
             dispatch(CityAction(data))
         })
     }
     const DeleteCity = (e) => {
-        axios.delete(`http://localhost:8080/city/${e.target.id}`).then(() => {
+        axios.delete(` https://jsons-ervermock.herokuapp.com/city/${e.target.id}`).then(() => {
             GetData()
         })
     }

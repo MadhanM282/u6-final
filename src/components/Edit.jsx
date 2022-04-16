@@ -16,17 +16,17 @@ export const EditForm = () => {
     })
 
     useEffect(() => {
-        axios.get('http://localhost:8080/country').then(({ data }) => {
+        axios.get(' https://jsons-ervermock.herokuapp.com/country').then(({ data }) => {
             SetCountry(data)
             dispatch(CountryAction(data))
         })
         console.log('country', country);
     }, [])
     const PostForm = () => {
-        axios.put(`http://localhost:8080/city/${id}`, data).then(({ data }) => {
+        axios.put(` https://jsons-ervermock.herokuapp.com/city/${id}`, data).then(({ data }) => {
             console.log('res', data);
         })
-        axios.get('http://localhost:8080/city').then(({ data }) => {
+        axios.get(' https://jsons-ervermock.herokuapp.com/city').then(({ data }) => {
             dispatch(CityAction(data))
         })
     }

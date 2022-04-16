@@ -14,17 +14,17 @@ export const CityForm = () => {
     })
 
     useEffect(() => {
-        axios.get('http://localhost:8080/country').then(({ data }) => {
+        axios.get(' https://jsons-ervermock.herokuapp.com/country').then(({ data }) => {
             SetCountry(data)
             dispatch(CountryAction(data))
         })
         console.log('country', country);
     }, [])
     const PostForm = () => {
-        axios.post('http://localhost:8080/city', data).then(({ data }) => {
+        axios.post(' https://jsons-ervermock.herokuapp.com/city', data).then(({ data }) => {
             console.log('res', data);
         })
-        axios.get('http://localhost:8080/city').then(({ data }) => {
+        axios.get(' https://jsons-ervermock.herokuapp.com/city').then(({ data }) => {
             dispatch(CityAction(data))
         })
     }
