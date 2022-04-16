@@ -15,27 +15,6 @@
     },
     {
       "city": "delhi",
-      "populaton": "10000000",
-      "countrty": "",
-      "": "india",
-      "id": 5
-    },
-    {
-      "city": "vizag",
-      "populaton": "10000",
-      "countrty": "",
-      "": "india",
-      "id": 6
-    },
-    {
-      "city": "gajuwaka",
-      "populaton": "1000080",
-      "country": "",
-      "": "india",
-      "id": 7
-    },
-    {
-      "city": "delhi",
       "populaton": "1000",
       "country": "usa",
       "id": 8

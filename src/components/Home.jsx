@@ -17,10 +17,9 @@ export const Home = () => {
     // console.log('country', country);
     useEffect(() => {
         GetData()
-    }, [cont,pop])
+    }, [pop])
     const GetData = () => {
-        axios.get(`http://localhost:8080/city?_sort=population&_order=${pop}`).then(({ data }) => {
-            console.log('data', data);
+        axios.get(`http://localhost:8080/city?_sort=populaton&_order=${pop}`).then(({ data }) => {
             dispatch(CityAction(data))
         })
     }
