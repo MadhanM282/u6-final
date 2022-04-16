@@ -2,7 +2,7 @@ import { Box, Button, Table, TableBody, TableCell, TableContainer, TableHead, Ta
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { CityAction, LoadingAction } from "../Redux/Action"
+import { CityAction, CountryAction, LoadingAction } from "../Redux/Action"
 import Paper from '@mui/material/Paper';
 import { useNavigate } from "react-router"
 
@@ -10,13 +10,17 @@ export const Home = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [pop,setPop] = useState("asc")
-    const [cont,SetCont] =useState("india")
+    const [cont,SetCont] =useState("")
     const { city,country,load} = useSelector((store) => store)
     useEffect(() => {
         GetData()
+        axios.get(' https://jsons-ervermock.herokuapp.com/country').then(({ data }) => {
+            // SetCountry(data)
+            dispatch(CountryAction(data))
+        })
     }, [pop,cont])
     const GetData = () => {
-        axios.get(` https://jsons-ervermock.herokuapp.com/city?country=${cont}&_sort=populaton&_order=${pop}`).then(({ data }) => {
+        axios.get(` https://jsons-ervermock.herokuapp.com/city?${cont}&_sort=populaton&_order=${pop}`).then(({ data }) => {
             dispatch(CityAction(data))
         })
     }
@@ -28,7 +32,7 @@ export const Home = () => {
     }
     const handelSort = (e)=>{
         if(e.target.id === "country"){
-            SetCont(e.target.value)
+            SetCont(`country=${e.target.value}`)
         }
         if(e.target.id==="asc"){
             setPop('asc')

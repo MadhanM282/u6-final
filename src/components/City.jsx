@@ -14,11 +14,6 @@ export const CityForm = () => {
     })
 
     useEffect(() => {
-        axios.get(' https://jsons-ervermock.herokuapp.com/country').then(({ data }) => {
-            SetCountry(data)
-            dispatch(CountryAction(data))
-        })
-        console.log('country', country);
     }, [])
     const PostForm = () => {
         axios.post(' https://jsons-ervermock.herokuapp.com/city', data).then(({ data }) => {
