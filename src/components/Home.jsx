@@ -13,7 +13,8 @@ export const Home = () => {
     const [pop,setPop] = useState("asc")
     const { city,country} = useSelector((store) => store)
     console.log('city', city);
-    // const country = useSelector((store) => store)
+    const countr = useSelector((store) => store)
+    console.log('countr', countr);
     console.log('country', country);
     useEffect(() => {
         GetData()
