@@ -58,13 +58,13 @@ export const Home = () => {
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
-                        <TableRow>
-                            <TableCell align="center">Sl.No</TableCell>
-                            <TableCell align="center">City</TableCell>
-                            <TableCell align="center">Country</TableCell>
-                            <TableCell align="center">Population</TableCell>
-                            <TableCell align="center">EDIT</TableCell>
-                            <TableCell align="center">Delete</TableCell>
+                        <TableRow sx={{bgcolor:"black"}}>
+                            <TableCell sx={{color:"white"}} align="center">Sl.No</TableCell>
+                            <TableCell sx={{color:"white"}} align="center">City</TableCell>
+                            <TableCell sx={{color:"white"}} align="center">Country</TableCell>
+                            <TableCell sx={{color:"white"}} align="center">Population</TableCell>
+                            <TableCell sx={{color:"white"}} align="center">EDIT</TableCell>
+                            <TableCell sx={{color:"white"}} align="center">Delete</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
