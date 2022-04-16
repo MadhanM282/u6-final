@@ -14,7 +14,7 @@ export const Home = () => {
     const { city,country} = useSelector((store) => store)
     console.log('city', city);
     // const country = useSelector((store) => store)
-    // console.log('country', country);
+    console.log('country', country);
     useEffect(() => {
         GetData()
     }, [pop])
@@ -46,9 +46,9 @@ export const Home = () => {
             <Box sx={{display: 'flex',justifyContent: 'space-evenly'}}>
                 <select name="country" id="" onChange={handelSort}>
                     <option value="">select country</option>
-                    {country.map((e)=>{
+                    {country?country.map((e)=>{
                         return <option  key={e.id} id="country" value={e.country}>{e.country}</option>
-                    })}
+                    }):""}
                 </select>
                 <Button onClick={handelSort} id='asc'>Population Asc</Button>
                 <Button onClick={handelSort} id='desc'>Population Desc</Button>
@@ -68,7 +68,7 @@ export const Home = () => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {city.map((e, i) => {
+                        {city?city.map((e, i) => {
                             return (
                                 <TableRow key={e.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                                     <TableCell align="center">{i + 1}</TableCell>
@@ -79,7 +79,7 @@ export const Home = () => {
                                     <TableCell id={e.id} onClick={DeleteCity} align="center">Delete</TableCell>
                                 </TableRow>
                             )
-                        })}
+                        }):""}
                     </TableBody>
                 </Table>
             </TableContainer>
