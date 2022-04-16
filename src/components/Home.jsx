@@ -10,16 +10,13 @@ export const Home = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [pop,setPop] = useState("asc")
+    const [cont,SetCont] =useState("india")
     const { city,country,load} = useSelector((store) => store)
-    console.log('country', country);
-    console.log('city', city);
-    const countr = useSelector((store) => store)
-    console.log('countr', countr);
     useEffect(() => {
         GetData()
-    }, [pop])
+    }, [pop,cont])
     const GetData = () => {
-        axios.get(` https://jsons-ervermock.herokuapp.com/city?_sort=populaton&_order=${pop}`).then(({ data }) => {
+        axios.get(` https://jsons-ervermock.herokuapp.com/city?country=${cont}&_sort=populaton&_order=${pop}`).then(({ data }) => {
             dispatch(CityAction(data))
         })
     }
@@ -30,19 +27,21 @@ export const Home = () => {
         })
     }
     const handelSort = (e)=>{
+        if(e.target.id === "country"){
+            SetCont(e.target.value)
+        }
         if(e.target.id==="asc"){
             setPop('asc')
         }
         if(e.target.id==="desc"){
             setPop('desc')
         }
-
     }
     
     return load?<img src="https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif" alt="" />:(
         <Box>
             <Box sx={{display: 'flex',justifyContent: 'space-evenly'}}>
-                <select name="country" id="" onChange={handelSort}>
+                <select name="country" id="country" onChange={handelSort}>
                     <option value="">select country</option>
                     {country?country.map((e)=>{
                         return <option  key={e.id} id="country" value={e.country}>{e.country}</option>
