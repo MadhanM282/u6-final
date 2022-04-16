@@ -29,6 +29,8 @@ export const EditForm = () => {
         axios.get(' https://jsons-ervermock.herokuapp.com/city').then(({ data }) => {
             dispatch(CityAction(data))
         })
+        dispatch(PutCity(data))
+        dispatch(GetCity())
     }
 
     const handelChange = (e) => {

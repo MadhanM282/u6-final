@@ -2,16 +2,14 @@ import { Button, TextField, Typography } from "@mui/material"
 import axios from "axios"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
-import { CityAction, CountryAction } from "../Redux/Action"
+import { CityAction, CountryAction, GetCountry, PostCountry } from "../Redux/Action"
 
 export const CountryForm = () => {
     const [data,setData] = useState("")
     const dispatch = useDispatch()
     const PostData = ()=>{
-        axios.post(' https://jsons-ervermock.herokuapp.com/country',{country:data})
-        axios.get(' https://jsons-ervermock.herokuapp.com/country').then(({data})=>{
-            dispatch(CityAction(data))
-        })
+        dispatch(PostCountry(data))
+        dispatch(GetCountry())
     }
     const handelChange = (e)=>{
         setData(e.target.value)
