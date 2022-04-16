@@ -2,7 +2,7 @@ import { Box, Button, Table, TableBody, TableCell, TableContainer, TableHead, Ta
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { CityAction } from "../Redux/Action"
+import { CityAction, LoadingAction } from "../Redux/Action"
 import Paper from '@mui/material/Paper';
 import { useNavigate } from "react-router"
 
@@ -10,7 +10,7 @@ export const Home = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [pop,setPop] = useState("asc")
-    const { city,country} = useSelector((store) => store)
+    const { city,country,load} = useSelector((store) => store)
     console.log('country', country);
     console.log('city', city);
     const countr = useSelector((store) => store)
@@ -24,6 +24,7 @@ export const Home = () => {
         })
     }
     const DeleteCity = (e) => {
+        dispatch(LoadingAction())
         axios.delete(` https://jsons-ervermock.herokuapp.com/city/${e.target.id}`).then(() => {
             GetData()
         })
@@ -38,7 +39,7 @@ export const Home = () => {
 
     }
     
-    return (
+    return load?<img src="https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif" alt="" />:(
         <Box>
             <Box sx={{display: 'flex',justifyContent: 'space-evenly'}}>
                 <select name="country" id="" onChange={handelSort}>

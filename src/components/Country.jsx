@@ -7,9 +7,8 @@ export const CountryForm = () => {
     const [data,setData] = useState("")
     const dispatch = useDispatch()
     const PostData = ()=>{
-        axios.post(' https://jsons-ervermock.herokuapp.com/country',{country:data}).then(({data})=>{
-        })
-        axios.post(' https://jsons-ervermock.herokuapp.com/country').then(({data})=>{
+        axios.post(' https://jsons-ervermock.herokuapp.com/country',{country:data})
+        axios.get(' https://jsons-ervermock.herokuapp.com/country').then(({data})=>{
             dispatch(CityAction(data))
         })
     }
