@@ -1,3 +1,4 @@
+import { Button, TextField } from "@mui/material"
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
@@ -42,8 +43,8 @@ export const CityForm = () => {
     return (
         <div>
             <form onSubmit={handelSubmit}>
-                <input onChange={(e) => handelChange(e)} type="text" id="city" placeholder="City Name" />
-                <input onChange={(e) => handelChange(e)} type="number" id="populaton" placeholder="Population" />
+                <TextField onChange={(e) => handelChange(e)} type="text" id="city" placeholder="City Name" /> <br />
+                <TextField onChange={(e) => handelChange(e)} type="number" id="populaton" placeholder="Population" /> <br />
                 <select onChange={(e) => {
                     handelCountry(e)
                 }} name="country" id="">
@@ -52,7 +53,7 @@ export const CityForm = () => {
                         return <option key={e.id} id="country" value={e.country}>{e.country}</option>
                     })}
                 </select>
-                <input type="submit" value="Submit" />
+                <Button type="submit">submit</Button>
             </form>
         </div>
     )

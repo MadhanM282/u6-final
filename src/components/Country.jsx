@@ -8,8 +8,9 @@ export const CountryForm = () => {
     const dispatch = useDispatch()
     const PostData = ()=>{
         axios.post('http://localhost:8080/country',{country:data}).then(({data})=>{
-            console.log('data', data);
-            
+        })
+        axios.post('http://localhost:8080/country').then(({data})=>{
+            dispatch(CityAction(data))
         })
     }
     const handelChange = (e)=>{

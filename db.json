@@ -11,6 +11,12 @@
       "populaton": "2223",
       "country": "europe",
       "id": 9
+    },
+    {
+      "city": "vizag",
+      "populaton": "20000",
+      "country": "europe",
+      "id": 10
     }
   ],
   "country": [
@@ -37,6 +43,18 @@
     {
       "country": "russia",
       "id": 6
+    },
+    {
+      "country": "pune",
+      "id": 7
+    },
+    {
+      "country": "mm",
+      "id": 8
+    },
+    {
+      "country": "delhi",
+      "id": 9
     }
   ]
 }

@@ -8,14 +8,12 @@ import { useNavigate } from "react-router"
 
 export const Home = () => {
     const dispatch = useDispatch()
-    
-    const [cont,setCont] = useState("")
     const [pop,setPop] = useState("asc")
     const { city,country} = useSelector((store) => store)
+    console.log('country', country);
     console.log('city', city);
     const countr = useSelector((store) => store)
     console.log('countr', countr);
-    console.log('country', country);
     useEffect(() => {
         GetData()
     }, [pop])
@@ -30,9 +28,6 @@ export const Home = () => {
         })
     }
     const handelSort = (e)=>{
-        if(e.target.id==="country"){
-            setCont(e.target.value)
-        }
         if(e.target.id==="asc"){
             setPop('asc')
         }
@@ -80,7 +75,9 @@ export const Home = () => {
                                     <TableCell id={e.id} onClick={DeleteCity} align="center">Delete</TableCell>
                                 </TableRow>
                             )
-                        }):""}
+                        }):<TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 }}}>
+                                <TableCell align="center">Add City</TableCell>
+                            </TableRow>}
                     </TableBody>
                 </Table>
             </TableContainer>
