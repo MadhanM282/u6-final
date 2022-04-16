@@ -8,6 +8,7 @@ import { useNavigate } from "react-router"
 
 export const Home = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const [pop,setPop] = useState("asc")
     const { city,country} = useSelector((store) => store)
     console.log('country', country);
@@ -71,7 +72,9 @@ export const Home = () => {
                                     <TableCell component="th" scope="row" align="center">{e.city}</TableCell>
                                     <TableCell align="center">{e.country}</TableCell>
                                     <TableCell align="center">{e.populaton}</TableCell>
-                                    <TableCell align="center">Edit</TableCell>
+                                    <TableCell onClick={()=>{
+                                        navigate(`/edit/${e.id}`)
+                                    }} align="center">Edit</TableCell>
                                     <TableCell id={e.id} onClick={DeleteCity} align="center">Delete</TableCell>
                                 </TableRow>
                             )

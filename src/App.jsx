@@ -3,6 +3,7 @@ import { Route, Routes, useNavigate } from 'react-router'
 import './App.css'
 import { CityForm } from './components/City'
 import { CountryForm } from './components/Country'
+import { EditForm } from './components/Edit'
 import { Home } from './components/Home'
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/add-country" element={<CountryForm />} />
         <Route path="/add-city" element={<CityForm />} />
+        <Route path="/edit/:id" element={<EditForm />} /> 
       </Routes>
     </div >
   )
