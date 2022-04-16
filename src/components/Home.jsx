@@ -19,6 +19,7 @@ export const Home = () => {
         })
     }, [pop, cont])
     const GetData = () => {
+        dispatch(LoadingAction())
         axios.get(` https://jsons-ervermock.herokuapp.com/city?${cont}&_sort=populaton&${pop}`).then(({ data }) => {
             dispatch(CityAction(data))
         })
