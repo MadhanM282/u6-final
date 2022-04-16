@@ -15,7 +15,6 @@ export const Home = () => {
     useEffect(() => {
         GetData()
         axios.get(' https://jsons-ervermock.herokuapp.com/country').then(({ data }) => {
-            // SetCountry(data)
             dispatch(CountryAction(data))
         })
     }, [pop,cont])
@@ -51,8 +50,8 @@ export const Home = () => {
                         return <option  key={e.id} id="country" value={e.country}>{e.country}</option>
                     }):""}
                 </select>
-                <Button onClick={handelSort} id='asc'>Population Asc</Button>
-                <Button onClick={handelSort} id='desc'>Population Desc</Button>
+                <Button sx={[{ bgcolor: "#000000", m: 1, color: "#f2f2ff" }, () => ({ '&:hover': { color: 'black' } })]} onClick={handelSort} id='asc'>Population Asc</Button>
+                <Button sx={[{ bgcolor: "#000000", m: 1, color: "#f2f2ff" }, () => ({ '&:hover': { color: 'black' } })]} onClick={handelSort} id='desc'>Population Desc</Button>
                 
 
             </Box>

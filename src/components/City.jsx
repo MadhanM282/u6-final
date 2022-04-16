@@ -48,7 +48,7 @@ export const CityForm = () => {
                         return <option key={e.id} id="country" value={e.country}>{e.country}</option>
                     })}
                 </select>
-                <Button type="submit">submit</Button>
+                <Button sx={[{ bgcolor: "#000000", m: 1, color: "#f2f2ff" }, () => ({ '&:hover': { color: 'black' } })]} type="submit">submit</Button>
             </form>
         </div>
     )

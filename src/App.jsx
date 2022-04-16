@@ -11,13 +11,13 @@ function App() {
   return (
     <div className="App">
       <Box sx={{display:'flex',justifyContent: 'space-around'}}>
-      <Button onClick={() => {
+      <Button sx={[{ bgcolor: "#000000", m: 1, color: "#f2f2ff" }, () => ({ '&:hover': { color: 'black' } })]} onClick={() => {
           navigate("/")
         }}>Home</Button>
-        <Button onClick={() => {
+        <Button sx={[{ bgcolor: "#000000", m: 1, color: "#f2f2ff" }, () => ({ '&:hover': { color: 'black' } })]} onClick={() => {
           navigate("/add-city")
         }}>Add City</Button>
-        <Button onClick={() => {
+        <Button sx={[{ bgcolor: "#000000", m: 1, color: "#f2f2ff" }, () => ({ '&:hover': { color: 'black' } })]} onClick={() => {
           navigate("/add-country")
         }}>Add Country</Button>
       </Box>

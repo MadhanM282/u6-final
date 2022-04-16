@@ -1,3 +1,4 @@
+import { Button, TextField, Typography } from "@mui/material"
 import axios from "axios"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
@@ -22,8 +23,8 @@ export const CountryForm = () => {
     return (
         <div>
             <form onSubmit={handelSubmit} >
-                <input onChange={(e)=>handelChange(e)} type="text" placeholder="Country Name" />
-                <input type="submit" value="Add Country" />
+                <TextField onChange={(e)=>handelChange(e)} type="text" placeholder="Country Name" /> <br />
+                <Button sx={[{ bgcolor: "#000000", m: 1, color: "#f2f2ff" }, () => ({ '&:hover': { color: 'black' } })]} type="submit">Add Country</Button>
             </form>
         </div>
     )
