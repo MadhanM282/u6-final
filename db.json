@@ -1,4 +1,62 @@
 {
-    "city":[],
-    "country":[]
+  "city": [
+    {
+      "city": "vizag",
+      "populaton": "2000000",
+      "country": "india",
+      "url": "http://localhost:8080/city",
+      "id": 1
+    },
+    {
+      "city": "california",
+      "populaton": "10000000",
+      "country": "usa",
+      "id": 4
+    },
+    {
+      "city": "delhi",
+      "populaton": "10000000",
+      "countrty": "",
+      "": "india",
+      "id": 5
+    },
+    {
+      "city": "vizag",
+      "populaton": "10000",
+      "countrty": "",
+      "": "india",
+      "id": 6
+    },
+    {
+      "city": "gajuwaka",
+      "populaton": "1000080",
+      "country": "",
+      "": "india",
+      "id": 7
+    },
+    {
+      "city": "delhi",
+      "populaton": "1000",
+      "country": "usa",
+      "id": 8
+    }
+  ],
+  "country": [
+    {
+      "country": "india",
+      "id": 1
+    },
+    {
+      "country": "usa",
+      "id": 2
+    },
+    {
+      "country": "africa",
+      "id": 3
+    },
+    {
+      "country": "europe",
+      "id": 4
+    }
+  ]
 }
