@@ -51,7 +51,7 @@ export const Home = () => {
                     })}
                 </select>
                 <Button onClick={handelSort} id='asc'>Population Asc</Button>
-                <Button onClick={handelSort} id='desc'>Population Asc</Button>
+                <Button onClick={handelSort} id='desc'>Population Desc</Button>
                 
 
             </Box>

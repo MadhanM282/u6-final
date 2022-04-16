@@ -1,19 +1,6 @@
 {
   "city": [
     {
-      "city": "vizag",
-      "populaton": "2000000",
-      "country": "india",
-      "url": "http://localhost:8080/city",
-      "id": 1
-    },
-    {
-      "city": "california",
-      "populaton": "10000000",
-      "country": "usa",
-      "id": 4
-    },
-    {
       "city": "delhi",
       "populaton": "1000",
       "country": "usa",
@@ -36,6 +23,14 @@
     {
       "country": "europe",
       "id": 4
+    },
+    {
+      "country": "africa",
+      "id": 5
+    },
+    {
+      "country": "russia",
+      "id": 6
     }
   ]
 }
