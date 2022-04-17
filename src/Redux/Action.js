@@ -26,7 +26,8 @@ export const PutCity = (id, data) => (dispatch) => (
 
 export const GetCountry = () => (dispatch) => (
     axios.get(' https://jsons-ervermock.herokuapp.com/country').then(({ data }) => {
-        dispatch(CityAction(data))
+        // dispatch(CityAction(data))
+        dispatch(CountryAction(data))
     })
 )
 export const PostCountry = (data) => (dispatch) => (

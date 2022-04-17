@@ -2,20 +2,20 @@ import { Button, TextField } from "@mui/material"
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { CityAction, CountryAction, GetCity, PostCity } from "../Redux/Action"
+import { CityAction, CountryAction, GetCity, GetCountry, PostCity } from "../Redux/Action"
 
 export const CityForm = () => {
     const dispatch = useDispatch()
-    const {country} = useSelector((store)=> store)
-    console.log('country', country);
     const [data, setData] = useState({
         city: "",
         populaton: 0,
         country: ""
     })
-
+    
+    const {country} = useSelector((store)=> store)
     useEffect(() => {
-        
+        dispatch(GetCountry())
+        console.log('country', country);
     }, [])
     const PostForm = () => {
         dispatch(PostCity(data))
