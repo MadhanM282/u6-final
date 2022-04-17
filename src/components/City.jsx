@@ -5,8 +5,9 @@ import { useDispatch, useSelector } from "react-redux"
 import { CityAction, CountryAction, GetCity, PostCity } from "../Redux/Action"
 
 export const CityForm = () => {
-    const [country, SetCountry] = useState([])
     const dispatch = useDispatch()
+    const {country} = useSelector((store)=> store)
+    console.log('country', country);
     const [data, setData] = useState({
         city: "",
         populaton: 0,
@@ -14,6 +15,7 @@ export const CityForm = () => {
     })
 
     useEffect(() => {
+        
     }, [])
     const PostForm = () => {
         dispatch(PostCity(data))
